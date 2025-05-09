@@ -8,12 +8,17 @@ AUTOREVISE é uma API desenvolvida para gerenciar múltiplas oficinas mecânicas
 
 ## 🚀 Funcionalidades
 
-- **Autenticação e Autorização**: Autenticação de colaboradores de acordo a unidade.  
-- **Gerenciamento de Pedidos**: Cadastro, atualização e acompanhamento do status dos serviços prestados.  
-- **Controle de Produtos e Estoque**: Administração de peças, acessórios e insumos utilizados nas oficinas.  
-- **Gestão Financeira**: Monitoramento de receitas, despesas e fluxo de caixa.  
-- **Cadastro de Clientes e Veículos**: Registro detalhado de clientes, incluindo dados de contato e informações sobre seus veículos.  
-- **Suporte a Múltiplas Oficinas**: Cada oficina pode operar de forma independente dentro da mesma plataforma.  
+    >> LEGENDA 🔵 CONCLUÍDO | 🔴 EM DESENVOLVIMENTO
+
+
+- 🔵 **Autenticação e Autorização**: Autenticação de colaboradores de acordo a unidade.  
+- 🔵 **Gerenciamento de Pedidos**: Cadastro, atualização e acompanhamento do status dos serviços prestados.  
+- 🔵 **Controle de Produtos**: Administração de peças, acessórios e insumos utilizados nas oficinas.  
+- 🔵 **Controle de Fornecedores**: Administração contatos dos fornecedores de seus produtos.  
+- 🔵 **Cadastro de Clientes e Veículos**: Registro detalhado de clientes, incluindo dados de contato e informações sobre seus veículos.  
+- 🔵 **Suporte a Múltiplas Oficinas**: Cada oficina pode operar de forma independente dentro da mesma plataforma.
+- 🔴 **Controle de estoque**: Debitar od estoque a quantidade realizada nas vendas e registrar quantidades adquiridas pelo fornecedor.
+- 🔴 **Controle de contas à pagar/receber**: Registrar receitas/despesa das oficinas
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -37,21 +42,24 @@ AUTOREVISE é uma API desenvolvida para gerenciar múltiplas oficinas mecânicas
 
 ```bash
 # Clone o repositório
-git clone https://github.com/glesiosantos/ms-oficinas-api.git
-
-# Caso use docker
-docker-compose up -d
+git clone https://github.com/glesiosantos/mecanica-gestor-api.git
 
 # Acesse a pasta do projeto
-cd ms-oficinas-api
+cd mecanica-gestor-api
 
 # Instale as dependências
 mvn install
 
-# Para rodar localmente, certifique se o application.yml está com active setado com valor 'DEV'
-spring:
-  profiles:
-    active: dev
+# Configurar as váriaveis de ambiente 
+    POSTGRESQL_HOST=
+    POSTGRESQL_USER=
+    POSTGRESQL_PASS=
+    RABBITMQ_HOST=
+    RABBITMQ_PORT=
+    RABBITMQ_USER=
+    RABBITMQ_PASS=
+    API_CORS_ALLOWED_ORIGINS=
+    API_SECRET=
 
 # Inicie a aplicação
 mvn spring-boot:run
