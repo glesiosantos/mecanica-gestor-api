@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS estabelecimentos (
+    id VARCHAR(150) NOT NULL PRIMARY KEY DEFAULT REPLACE(uuid_generate_v4()::text, '-',''),
+    cod_integracao VARCHAR(150) NOT NULL UNIQUE,
+    tipo CHAR(2) NOT NULL DEFAULT 'PF',
+    cpf_cnpj VARCHAR(20) NOT NULL UNIQUE,
+    razao VARCHAR(150) NOT NULL,
+    nm_fantasia VARCHAR(150) NOT NULL UNIQUE,
+    logo VARCHAR(150),
+    vencimento INTEGER DEFAULT '0',
+    ativo boolean NOT NULL DEFAULT 'false',
+    plano CHAR(5) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    logradouro VARCHAR(150) NOT NULL,
+    bairro VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    uf CHAR(2) NOT NULL DEFAULT 'PI',
+    complemento TEXT,
+    latitude VARCHAR(60),
+    longitude VARCHAR(60),
+    dt_fim_teste DATE,
+    dt_criado_em DATE NOT NULL DEFAULT 'now()',
+    dt_atualizado_em DATE
+);
