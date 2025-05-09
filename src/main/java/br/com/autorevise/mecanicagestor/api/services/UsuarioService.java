@@ -1,10 +1,9 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Usuario;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.request.UsuarioRequest;
-import br.com.msoficinas.api.web.request.UsuarioUpdateSenhaRequest;
-import br.com.msoficinas.api.web.response.ColaboradorEstabelecimentoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Usuario;
+import br.com.autorevise.mecanicagestor.api.web.request.UsuarioRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.UsuarioUpdateSenhaRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ColaboradorEstabelecimentoResponse;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Marca;
+import br.com.autorevise.mecanicagestor.api.entities.Marca;
 
 import java.util.List;
 

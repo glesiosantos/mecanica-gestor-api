@@ -1,9 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Usuario;
-import br.com.msoficinas.api.web.request.LoginRequest;
-import br.com.msoficinas.api.web.response.UsuarioComVariosEstabelecimentos;
-import br.com.msoficinas.api.web.response.UsuarioResponse;
+import br.com.autorevise.mecanicagestor.api.web.request.LoginRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.UsuarioResponse;
 
 public interface AutenticacaoService {
 

@@ -1,8 +1,8 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.ServicoEstabelecimento;
-import br.com.msoficinas.api.web.request.ServicoRequest;
-import br.com.msoficinas.api.web.response.ServicoEstabelecimentoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.ServicoEstabelecimento;
+import br.com.autorevise.mecanicagestor.api.web.request.ServicoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ServicoEstabelecimentoResponse;
 
 import java.util.List;
 

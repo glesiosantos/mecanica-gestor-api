@@ -1,11 +1,10 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Estabelecimento;
-import br.com.msoficinas.api.web.request.EstabelecimentoRequest;
-import br.com.msoficinas.api.web.request.UpdatePlanoRequest;
-import br.com.msoficinas.api.web.response.ClienteResponse;
-import br.com.msoficinas.api.web.response.EstabelecimentoDadosResponse;
-import br.com.msoficinas.api.web.response.EstabelecimentoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Estabelecimento;
+import br.com.autorevise.mecanicagestor.api.web.request.EstabelecimentoRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.UpdatePlanoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ClienteResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.EstabelecimentoDadosResponse;
 
 import java.util.Set;
 

@@ -1,8 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Fornecedor;
-import br.com.msoficinas.api.web.request.FornecedorRequest;
-import jakarta.validation.constraints.NotBlank;
+import br.com.autorevise.mecanicagestor.api.entities.Fornecedor;
+import br.com.autorevise.mecanicagestor.api.web.request.FornecedorRequest;
 
 import java.util.List;
 

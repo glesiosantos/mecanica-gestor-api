@@ -1,5 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
+import br.com.autorevise.mecanicagestor.api.entities.Ordem;
 import br.com.msoficinas.api.entidades.*;
 import br.com.msoficinas.api.enuns.FormaDePagamento;
 import br.com.msoficinas.api.enuns.OrdemStatus;

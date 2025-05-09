@@ -1,10 +1,10 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Cliente;
-import br.com.msoficinas.api.web.request.AddVeiculoClienteRequest;
-import br.com.msoficinas.api.web.request.ClienteAddRequest;
-import br.com.msoficinas.api.web.response.ClienteResponse;
-import br.com.msoficinas.api.web.response.FormClienteResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Cliente;
+import br.com.autorevise.mecanicagestor.api.web.request.AddVeiculoClienteRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.ClienteAddRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ClienteResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.FormClienteResponse;
 
 public interface ClienteService {
 
