@@ -1,11 +1,11 @@
 package br.com.autorevise.mecanicagestor.api.web.mappers;
 
-import br.com.msoficinas.api.entidades.Cliente;
-import br.com.msoficinas.api.enuns.TipoPessoa;
-import br.com.msoficinas.api.web.request.ClienteAddRequest;
-import br.com.msoficinas.api.web.response.ClienteResponse;
-import br.com.msoficinas.api.web.response.FormClienteResponse;
-import br.com.msoficinas.api.web.response.VeiculoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Cliente;
+import br.com.autorevise.mecanicagestor.api.enuns.TipoPessoa;
+import br.com.autorevise.mecanicagestor.api.web.request.ClienteAddRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ClienteResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.FormClienteResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.VeiculoResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

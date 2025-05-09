@@ -1,8 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.web.mappers;
 
-import br.com.msoficinas.api.entidades.Especialidade;
-import br.com.msoficinas.api.entidades.Estabelecimento;
-import br.com.msoficinas.api.web.response.EspecialidadeResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Especialidade;
+import br.com.autorevise.mecanicagestor.api.web.response.EspecialidadeResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

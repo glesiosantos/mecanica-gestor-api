@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.entities;
 
-import br.com.msoficinas.api.enuns.CategoriaEspecialidade;
-import br.com.msoficinas.api.enuns.TipoVeiculo;
+import br.com.autorevise.mecanicagestor.api.enuns.CategoriaEspecialidade;
+import br.com.autorevise.mecanicagestor.api.enuns.TipoVeiculo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

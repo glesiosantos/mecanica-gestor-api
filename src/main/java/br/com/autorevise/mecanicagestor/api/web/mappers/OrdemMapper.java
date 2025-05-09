@@ -1,13 +1,13 @@
 package br.com.autorevise.mecanicagestor.api.web.mappers;
 
-import br.com.msoficinas.api.entidades.Ordem;
-import br.com.msoficinas.api.entidades.Veiculo;
-import br.com.msoficinas.api.enuns.OrdemStatus;
-import br.com.msoficinas.api.enuns.TipoDeProposta;
-import br.com.msoficinas.api.web.response.ItemOrdemResponse;
-import br.com.msoficinas.api.web.response.OrdemResponseList;
-import br.com.msoficinas.api.web.response.ServicoResponse;
-import br.com.msoficinas.api.web.response.VeiculoFormResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Ordem;
+import br.com.autorevise.mecanicagestor.api.entities.Veiculo;
+import br.com.autorevise.mecanicagestor.api.enuns.OrdemStatus;
+import br.com.autorevise.mecanicagestor.api.enuns.TipoDeProposta;
+import br.com.autorevise.mecanicagestor.api.web.response.ItemOrdemResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.OrdemResponseList;
+import br.com.autorevise.mecanicagestor.api.web.response.ServicoResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.VeiculoFormResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

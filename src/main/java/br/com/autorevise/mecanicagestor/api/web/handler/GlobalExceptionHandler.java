@@ -1,9 +1,9 @@
 package br.com.autorevise.mecanicagestor.api.web.handler;
 
-import br.com.msoficinas.api.services.exceptions.ObjetoJaRegistradoException;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.response.ErroResponse;
-import br.com.msoficinas.api.web.response.ErroValidacaoResponse;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoJaRegistradoException;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
+import br.com.autorevise.mecanicagestor.api.web.response.ErroResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.ErroValidacaoResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

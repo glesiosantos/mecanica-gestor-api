@@ -1,11 +1,10 @@
 package br.com.autorevise.mecanicagestor.api.web.mappers;
 
-import br.com.msoficinas.api.entidades.Produto;
-import br.com.msoficinas.api.enuns.CategoriaProduto;
-import br.com.msoficinas.api.web.request.ProdutoRequest;
-import br.com.msoficinas.api.web.response.EstoqueResponse;
-import br.com.msoficinas.api.web.response.ModeloCompativeisResponse;
-import br.com.msoficinas.api.web.response.ProdutoListResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Produto;
+import br.com.autorevise.mecanicagestor.api.enuns.CategoriaProduto;
+import br.com.autorevise.mecanicagestor.api.web.request.ProdutoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.EstoqueResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.ProdutoListResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

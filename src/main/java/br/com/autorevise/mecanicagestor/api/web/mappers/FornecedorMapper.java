@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.web.mappers;
 
-import br.com.msoficinas.api.entidades.Fornecedor;
-import br.com.msoficinas.api.web.request.FornecedorRequest;
+import br.com.autorevise.mecanicagestor.api.entities.Fornecedor;
+import br.com.autorevise.mecanicagestor.api.web.request.FornecedorRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
