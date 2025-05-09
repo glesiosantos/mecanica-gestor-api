@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./src/main/resources/templates/autorevise_1024x1024.png" width="250px"/>
+    <img src="./src/main/resources/static/autorevise_1024x1024.png" width="250px"/>
 </div>
 
 ## AUTOREVISE- API de Gestão para Oficinas Mecânicas (Carros, Motos e Bicicletas)
