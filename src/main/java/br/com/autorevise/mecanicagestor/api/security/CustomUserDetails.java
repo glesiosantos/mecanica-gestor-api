@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.security;
 
-import br.com.msoficinas.api.entidades.Usuario;
+import br.com.autorevise.mecanicagestor.api.entities.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;

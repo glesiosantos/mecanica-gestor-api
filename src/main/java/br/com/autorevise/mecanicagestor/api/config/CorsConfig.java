@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfig {
 
-    @Value("${app.consumidor.urls}")
+    @Value("${api.urls.consumers}")
     private String consumidor;
 
     @Bean

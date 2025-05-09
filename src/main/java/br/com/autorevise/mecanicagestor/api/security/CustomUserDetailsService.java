@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.security;
 
-import br.com.msoficinas.api.repositories.UsuarioRepository;
+import br.com.autorevise.mecanicagestor.api.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
