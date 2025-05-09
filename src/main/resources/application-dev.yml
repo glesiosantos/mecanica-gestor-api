@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/mecanica_gestor_api
+    username: postgres
+    password: 102030
+    driver-class-name: org.postgresql.Driver
+#  sql:
+#    init:
+#      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
