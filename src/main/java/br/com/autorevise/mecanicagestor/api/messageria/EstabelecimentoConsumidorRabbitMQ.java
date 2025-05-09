@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.messageria;
 
-import br.com.msoficinas.api.services.EstabelecimentoService;
-import br.com.msoficinas.api.web.request.EstabelecimentoRequest;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.web.request.EstabelecimentoRequest;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

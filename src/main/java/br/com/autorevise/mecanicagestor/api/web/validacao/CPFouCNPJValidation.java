@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.web.validacao;
 
-import br.com.msoficinas.api.utils.BR;
+import br.com.autorevise.mecanicagestor.api.utils.BR;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.util.StringUtils;
