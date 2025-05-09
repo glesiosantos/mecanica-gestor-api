@@ -1,21 +1,20 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.autorevise.mecanicagestor.api.entities.Ordem;
-import br.com.msoficinas.api.entidades.*;
-import br.com.msoficinas.api.enuns.FormaDePagamento;
-import br.com.msoficinas.api.enuns.OrdemStatus;
-import br.com.msoficinas.api.enuns.StatusOficina;
-import br.com.msoficinas.api.enuns.TipoDeProposta;
-import br.com.msoficinas.api.repositories.OrdemRepository;
-import br.com.msoficinas.api.repositories.ProdutoRepository;
-import br.com.msoficinas.api.repositories.ServicoRepository;
-import br.com.msoficinas.api.services.*;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.mappers.OrdemMapper;
-import br.com.msoficinas.api.web.request.AtualizarOrdemStatusRequest;
-import br.com.msoficinas.api.web.request.AtualizarStatusOficinaRequest;
-import br.com.msoficinas.api.web.request.OrdemRequest;
-import br.com.msoficinas.api.web.response.OrdemResponseList;
+import br.com.autorevise.mecanicagestor.api.entities.*;
+import br.com.autorevise.mecanicagestor.api.enuns.FormaDePagamento;
+import br.com.autorevise.mecanicagestor.api.enuns.OrdemStatus;
+import br.com.autorevise.mecanicagestor.api.enuns.StatusOficina;
+import br.com.autorevise.mecanicagestor.api.enuns.TipoDeProposta;
+import br.com.autorevise.mecanicagestor.api.repositories.OrdemRepository;
+import br.com.autorevise.mecanicagestor.api.repositories.ProdutoRepository;
+import br.com.autorevise.mecanicagestor.api.repositories.ServicoRepository;
+import br.com.autorevise.mecanicagestor.api.services.*;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
+import br.com.autorevise.mecanicagestor.api.web.mappers.OrdemMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.AtualizarOrdemStatusRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.AtualizarStatusOficinaRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.OrdemRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.OrdemResponseList;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class OrdemServiceImpl implements OrdemService {
@@ -92,7 +90,7 @@ public class OrdemServiceImpl implements OrdemService {
     public List<OrdemResponseList> carregarOrdemEstabelecimento(String idEstabelecimento) {
         return ordemRepository.findOrdemByEstabelecimento(idEstabelecimento)
                 .stream().map(ordem -> ordemMapper.converterModelParaResponseList(ordem))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

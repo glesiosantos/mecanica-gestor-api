@@ -1,23 +1,20 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.Cliente;
-import br.com.msoficinas.api.entidades.Veiculo;
-import br.com.msoficinas.api.repositories.ClienteRepository;
-import br.com.msoficinas.api.repositories.VeiculoRepository;
-import br.com.msoficinas.api.services.ClienteService;
-import br.com.msoficinas.api.services.MarcaService;
-import br.com.msoficinas.api.services.VeiculoService;
-import br.com.msoficinas.api.web.mappers.VeiculoMapper;
-import br.com.msoficinas.api.web.request.VeiculoRequest;
-import br.com.msoficinas.api.web.response.VeiculoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Cliente;
+import br.com.autorevise.mecanicagestor.api.entities.Veiculo;
+import br.com.autorevise.mecanicagestor.api.repositories.ClienteRepository;
+import br.com.autorevise.mecanicagestor.api.repositories.VeiculoRepository;
+import br.com.autorevise.mecanicagestor.api.services.MarcaService;
+import br.com.autorevise.mecanicagestor.api.services.VeiculoService;
+import br.com.autorevise.mecanicagestor.api.web.mappers.VeiculoMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.VeiculoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.VeiculoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,5 +69,4 @@ public class VeiculoServiceImpl implements VeiculoService {
     public boolean veiculoEstaViculadoComEsteCliente(Cliente cliente, String placa) {
         return veiculoRepository.existsByPlacaAndClienteId(placa, cliente.getId());
     }
-
 }

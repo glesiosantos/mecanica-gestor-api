@@ -1,13 +1,12 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.Usuario;
-import br.com.msoficinas.api.services.AutenticacaoService;
-import br.com.msoficinas.api.services.JwtService;
-import br.com.msoficinas.api.services.UsuarioService;
-import br.com.msoficinas.api.web.request.LoginRequest;
-import br.com.msoficinas.api.web.response.EstabelecimentoResponse;
-import br.com.msoficinas.api.web.response.UsuarioComVariosEstabelecimentos;
-import br.com.msoficinas.api.web.response.UsuarioResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Usuario;
+import br.com.autorevise.mecanicagestor.api.services.AutenticacaoService;
+import br.com.autorevise.mecanicagestor.api.services.JwtService;
+import br.com.autorevise.mecanicagestor.api.services.UsuarioService;
+import br.com.autorevise.mecanicagestor.api.web.request.LoginRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.EstabelecimentoResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.UsuarioResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

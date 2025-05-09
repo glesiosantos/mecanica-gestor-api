@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.web.request;
 
-import br.com.msoficinas.api.web.response.ServicoResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.ServicoResponse;
 
 import java.util.List;
 

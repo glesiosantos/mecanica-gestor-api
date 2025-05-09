@@ -1,11 +1,11 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.Especialidade;
-import br.com.msoficinas.api.repositories.EspecialidadeRepository;
-import br.com.msoficinas.api.services.EspecialidadeService;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.mappers.EspecialidadeMapper;
-import br.com.msoficinas.api.web.response.EspecialidadeResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Especialidade;
+import br.com.autorevise.mecanicagestor.api.repositories.EspecialidadeRepository;
+import br.com.autorevise.mecanicagestor.api.services.EspecialidadeService;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
+import br.com.autorevise.mecanicagestor.api.web.mappers.EspecialidadeMapper;
+import br.com.autorevise.mecanicagestor.api.web.response.EspecialidadeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

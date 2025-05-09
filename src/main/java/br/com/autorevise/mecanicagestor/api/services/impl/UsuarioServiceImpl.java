@@ -1,15 +1,15 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.Usuario;
-import br.com.msoficinas.api.enuns.Perfil;
-import br.com.msoficinas.api.repositories.UsuarioRepository;
-import br.com.msoficinas.api.services.EstabelecimentoService;
-import br.com.msoficinas.api.services.UsuarioService;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.mappers.UsuarioMapper;
-import br.com.msoficinas.api.web.request.UsuarioRequest;
-import br.com.msoficinas.api.web.request.UsuarioUpdateSenhaRequest;
-import br.com.msoficinas.api.web.response.ColaboradorEstabelecimentoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Usuario;
+import br.com.autorevise.mecanicagestor.api.enuns.Perfil;
+import br.com.autorevise.mecanicagestor.api.repositories.UsuarioRepository;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.services.UsuarioService;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
+import br.com.autorevise.mecanicagestor.api.web.mappers.UsuarioMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.UsuarioRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.UsuarioUpdateSenhaRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ColaboradorEstabelecimentoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

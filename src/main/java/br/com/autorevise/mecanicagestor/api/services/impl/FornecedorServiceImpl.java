@@ -1,12 +1,12 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.Fornecedor;
-import br.com.msoficinas.api.repositories.FornecedorRepository;
-import br.com.msoficinas.api.services.EstabelecimentoService;
-import br.com.msoficinas.api.services.FornecedorService;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.mappers.FornecedorMapper;
-import br.com.msoficinas.api.web.request.FornecedorRequest;
+import br.com.autorevise.mecanicagestor.api.entities.Fornecedor;
+import br.com.autorevise.mecanicagestor.api.repositories.FornecedorRepository;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.services.FornecedorService;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
+import br.com.autorevise.mecanicagestor.api.web.mappers.FornecedorMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.FornecedorRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

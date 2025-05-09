@@ -1,20 +1,19 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.ServicoEstabelecimento;
-import br.com.msoficinas.api.repositories.ServicoRepository;
-import br.com.msoficinas.api.services.EspecialidadeService;
-import br.com.msoficinas.api.services.EstabelecimentoService;
-import br.com.msoficinas.api.services.ServicoEstabelecimentoService;
-import br.com.msoficinas.api.services.exceptions.ObjetoNaoEncontradoException;
-import br.com.msoficinas.api.web.mappers.ServicoEstabelecimentoMapper;
-import br.com.msoficinas.api.web.request.ServicoRequest;
-import br.com.msoficinas.api.web.response.ServicoEstabelecimentoResponse;
+import br.com.autorevise.mecanicagestor.api.entities.ServicoEstabelecimento;
+import br.com.autorevise.mecanicagestor.api.repositories.ServicoRepository;
+import br.com.autorevise.mecanicagestor.api.services.EspecialidadeService;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.services.ServicoEstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
+import br.com.autorevise.mecanicagestor.api.web.mappers.ServicoEstabelecimentoMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.ServicoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ServicoEstabelecimentoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ServicoEstabelecimentoImpl implements ServicoEstabelecimentoService {
@@ -64,6 +63,6 @@ public class ServicoEstabelecimentoImpl implements ServicoEstabelecimentoService
         return servicoRepository.findByEstabelecimentoId(id)
                 .stream()
                 .map(servico -> servicoEstabelecimentoMapper.converterModeloEmResponse(servico))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

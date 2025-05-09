@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.config;
 
-import br.com.msoficinas.api.security.CustomAccessHandler;
-import br.com.msoficinas.api.security.SecurityFilter;
+import br.com.autorevise.mecanicagestor.api.security.CustomAccessHandler;
+import br.com.autorevise.mecanicagestor.api.security.SecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

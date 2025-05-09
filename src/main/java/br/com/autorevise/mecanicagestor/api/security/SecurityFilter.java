@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.security;
 
-import br.com.msoficinas.api.services.JwtService;
+import br.com.autorevise.mecanicagestor.api.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

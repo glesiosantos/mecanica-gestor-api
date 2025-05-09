@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.web.request;
 
-import br.com.msoficinas.api.web.validacao.CPFouCNPJ;
+import br.com.autorevise.mecanicagestor.api.web.validacao.CPFouCNPJ;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
