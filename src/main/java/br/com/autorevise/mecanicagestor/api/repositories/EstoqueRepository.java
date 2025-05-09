@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.repositories;
 
-import br.com.msoficinas.api.entidades.EstoqueProduto;
+import br.com.autorevise.mecanicagestor.api.entities.EstoqueProduto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

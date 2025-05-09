@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.repositories;
 
-import br.com.msoficinas.api.entidades.ServicoEstabelecimento;
+import br.com.autorevise.mecanicagestor.api.entities.ServicoEstabelecimento;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

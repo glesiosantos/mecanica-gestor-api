@@ -1,15 +1,12 @@
 package br.com.autorevise.mecanicagestor.api.entities;
 
-import br.com.msoficinas.api.enuns.TipoVeiculo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import java.util.Set;
 
 @Getter
 @Setter

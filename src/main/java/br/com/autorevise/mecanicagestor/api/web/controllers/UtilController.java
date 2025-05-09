@@ -1,11 +1,11 @@
 package br.com.autorevise.mecanicagestor.api.web.controllers;
 
-import br.com.msoficinas.api.enuns.CategoriaProduto;
-import br.com.msoficinas.api.enuns.OrdemStatus;
-import br.com.msoficinas.api.enuns.Perfil;
-import br.com.msoficinas.api.web.response.CategoriaProdutoResponse;
-import br.com.msoficinas.api.web.response.OrdemStatusResponse;
-import br.com.msoficinas.api.web.response.PerfilResponse;
+import br.com.autorevise.mecanicagestor.api.enuns.CategoriaProduto;
+import br.com.autorevise.mecanicagestor.api.enuns.OrdemStatus;
+import br.com.autorevise.mecanicagestor.api.enuns.Perfil;
+import br.com.autorevise.mecanicagestor.api.web.response.CategoriaProdutoResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.OrdemStatusResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.PerfilResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

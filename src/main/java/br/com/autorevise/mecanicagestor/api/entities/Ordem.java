@@ -1,9 +1,9 @@
 package br.com.autorevise.mecanicagestor.api.entities;
 
-import br.com.msoficinas.api.enuns.FormaDePagamento;
-import br.com.msoficinas.api.enuns.OrdemStatus;
-import br.com.msoficinas.api.enuns.StatusOficina;
-import br.com.msoficinas.api.enuns.TipoDeProposta;
+import br.com.autorevise.mecanicagestor.api.enuns.FormaDePagamento;
+import br.com.autorevise.mecanicagestor.api.enuns.OrdemStatus;
+import br.com.autorevise.mecanicagestor.api.enuns.StatusOficina;
+import br.com.autorevise.mecanicagestor.api.enuns.TipoDeProposta;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

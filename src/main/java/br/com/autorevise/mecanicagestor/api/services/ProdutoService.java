@@ -1,8 +1,8 @@
 package br.com.autorevise.mecanicagestor.api.services;
 
-import br.com.msoficinas.api.entidades.Produto;
-import br.com.msoficinas.api.web.request.ProdutoRequest;
-import br.com.msoficinas.api.web.response.ProdutoListResponse;
+import br.com.autorevise.mecanicagestor.api.entities.Produto;
+import br.com.autorevise.mecanicagestor.api.web.request.ProdutoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.ProdutoListResponse;
 
 import java.util.List;
 

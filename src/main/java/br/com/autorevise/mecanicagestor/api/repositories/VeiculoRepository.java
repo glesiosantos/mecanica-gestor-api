@@ -1,7 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.repositories;
 
-import br.com.msoficinas.api.entidades.Veiculo;
-import jakarta.validation.constraints.NotBlank;
+import br.com.autorevise.mecanicagestor.api.entities.Veiculo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.web.mappers;
 
-import br.com.msoficinas.api.entidades.EstoqueProduto;
-import br.com.msoficinas.api.web.response.EstoqueResponse;
+import br.com.autorevise.mecanicagestor.api.entities.EstoqueProduto;
+import br.com.autorevise.mecanicagestor.api.web.response.EstoqueResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

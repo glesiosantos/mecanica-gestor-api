@@ -1,5 +1,13 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
+import br.com.autorevise.mecanicagestor.api.entities.Produto;
+import br.com.autorevise.mecanicagestor.api.enuns.CategoriaProduto;
+import br.com.autorevise.mecanicagestor.api.repositories.ProdutoRepository;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.services.FornecedorService;
+import br.com.autorevise.mecanicagestor.api.services.ProdutoService;
+import br.com.autorevise.mecanicagestor.api.web.mappers.ProdutoMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.ProdutoRequest;
 import br.com.msoficinas.api.entidades.Produto;
 import br.com.msoficinas.api.enuns.CategoriaProduto;
 import br.com.msoficinas.api.repositories.ProdutoRepository;

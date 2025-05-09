@@ -1,8 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.entities;
 
-import br.com.msoficinas.api.conversor.CPFConversor;
-import br.com.msoficinas.api.enuns.Perfil;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import br.com.autorevise.mecanicagestor.api.enuns.Perfil;
+import br.com.autorevise.mecanicagestor.api.utils.conversor.CPFConversor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.entities;
 
-import br.com.msoficinas.api.enuns.CategoriaProduto;
-import br.com.msoficinas.api.utils.conversor.UpperCaseConverter;
+import br.com.autorevise.mecanicagestor.api.enuns.CategoriaProduto;
+import br.com.autorevise.mecanicagestor.api.utils.conversor.UpperCaseConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,6 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter

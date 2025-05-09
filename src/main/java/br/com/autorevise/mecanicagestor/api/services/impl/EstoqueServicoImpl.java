@@ -1,15 +1,15 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
-import br.com.msoficinas.api.entidades.EstoqueProduto;
-import br.com.msoficinas.api.entidades.Fornecedor;
-import br.com.msoficinas.api.entidades.Produto;
-import br.com.msoficinas.api.repositories.EstoqueRepository;
-import br.com.msoficinas.api.services.EstoqueService;
-import br.com.msoficinas.api.services.FornecedorService;
-import br.com.msoficinas.api.services.ProdutoService;
-import br.com.msoficinas.api.web.mappers.EstoqueMapper;
-import br.com.msoficinas.api.web.request.EstoqueRequest;
-import br.com.msoficinas.api.web.response.EstoqueResponse;
+import br.com.autorevise.mecanicagestor.api.entities.EstoqueProduto;
+import br.com.autorevise.mecanicagestor.api.entities.Fornecedor;
+import br.com.autorevise.mecanicagestor.api.entities.Produto;
+import br.com.autorevise.mecanicagestor.api.repositories.EstoqueRepository;
+import br.com.autorevise.mecanicagestor.api.services.EstoqueService;
+import br.com.autorevise.mecanicagestor.api.services.FornecedorService;
+import br.com.autorevise.mecanicagestor.api.services.ProdutoService;
+import br.com.autorevise.mecanicagestor.api.web.mappers.EstoqueMapper;
+import br.com.autorevise.mecanicagestor.api.web.request.EstoqueRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.EstoqueResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
