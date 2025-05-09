@@ -1,6 +1,6 @@
 package br.com.autorevise.mecanicagestor.api.web.controllers;
 
-import br.com.msoficinas.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

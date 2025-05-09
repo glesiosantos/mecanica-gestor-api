@@ -1,9 +1,9 @@
 package br.com.autorevise.mecanicagestor.api.web.controllers;
 
-import br.com.msoficinas.api.enuns.Plano;
-import br.com.msoficinas.api.services.EstabelecimentoService;
-import br.com.msoficinas.api.web.request.UpdatePlanoRequest;
-import br.com.msoficinas.api.web.response.PlanoResponse;
+import br.com.autorevise.mecanicagestor.api.enuns.Plano;
+import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.web.request.UpdatePlanoRequest;
+import br.com.autorevise.mecanicagestor.api.web.response.PlanoResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

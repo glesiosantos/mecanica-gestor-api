@@ -1,7 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.web.controllers;
 
-import br.com.msoficinas.api.services.ServicoEstabelecimentoService;
-import br.com.msoficinas.api.web.request.ServicoRequest;
+import br.com.autorevise.mecanicagestor.api.services.ServicoEstabelecimentoService;
+import br.com.autorevise.mecanicagestor.api.web.request.ServicoRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,13 +1,14 @@
 package br.com.autorevise.mecanicagestor.api.web.controllers;
 
-import br.com.msoficinas.api.enuns.CategoriaEspecialidade;
-import br.com.msoficinas.api.services.EspecialidadeService;
-import br.com.msoficinas.api.web.request.ServicoRequest;
-import br.com.msoficinas.api.web.response.EspecialidadeCategoriaResponse;
-import jakarta.validation.Valid;
+import br.com.autorevise.mecanicagestor.api.enuns.CategoriaEspecialidade;
+import br.com.autorevise.mecanicagestor.api.services.EspecialidadeService;
+import br.com.autorevise.mecanicagestor.api.web.response.EspecialidadeCategoriaResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 

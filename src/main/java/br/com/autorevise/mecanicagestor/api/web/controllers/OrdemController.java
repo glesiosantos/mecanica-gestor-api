@@ -1,9 +1,9 @@
 package br.com.autorevise.mecanicagestor.api.web.controllers;
 
-import br.com.msoficinas.api.services.OrdemService;
-import br.com.msoficinas.api.web.request.AtualizarOrdemStatusRequest;
-import br.com.msoficinas.api.web.request.AtualizarStatusOficinaRequest;
-import br.com.msoficinas.api.web.request.OrdemRequest;
+import br.com.autorevise.mecanicagestor.api.services.OrdemService;
+import br.com.autorevise.mecanicagestor.api.web.request.AtualizarOrdemStatusRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.AtualizarStatusOficinaRequest;
+import br.com.autorevise.mecanicagestor.api.web.request.OrdemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
