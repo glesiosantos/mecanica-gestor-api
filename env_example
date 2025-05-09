@@ -1,3 +1,9 @@
 postgresql.host=
 postgresql.user=
 postgresql.pass=
+rabbitmq.host=
+rabbitmq.port=
+rabbitmq.username=
+rabbitmq.password=
+api.consumers=
+api.secret=

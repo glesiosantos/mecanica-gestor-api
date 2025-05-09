@@ -18,3 +18,18 @@ spring:
       ddl-auto: none
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  rabbitmq:
+    host: ${rabbitmq.host}
+    port: ${rabbitmq.port}
+    username: ${rabbitmq.username}
+    password: ${rabbitmq.password}
+
+api:
+  urls:
+    consumers: ${api.consumers}
+  security:
+    secret: ${api.secret}
+
+rabbitmq:
+  queue:
+    criar-oficina: rabbitmq-queue-novas-oficina
