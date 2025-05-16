@@ -1,0 +1,1 @@
+INSERT INTO clientes (cpf_cnpj, razao, nm_completo, tipo) VALUES ('00000000000', 'CONSUMIDOR', 'CONSUMIDOR', 'PF') on conflict do nothing;
