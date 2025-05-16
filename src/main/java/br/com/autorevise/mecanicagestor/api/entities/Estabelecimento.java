@@ -56,11 +56,11 @@ public class Estabelecimento extends Auditoria {
     private Set<String> contatos;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "estabelecimentos", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "estabelecimentos", cascade = CascadeType.PERSIST)
     private Set<Usuario> usuarios = new HashSet<>();
 
-    @ManyToMany(mappedBy = "estabelecimentos", fetch = FetchType.EAGER)
-    private Set<Cliente> clientes;
+    @ManyToMany(mappedBy = "estabelecimentos")
+    private Set<Cliente> clientes = new HashSet<>();
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "estabelecimento", cascade = CascadeType.ALL)

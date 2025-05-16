@@ -16,5 +16,7 @@ public interface ClienteService {
 
     ClienteResponse buscaClienteParaEstabelecimentoPeloId(String idCliente) throws Exception;
 
+    Cliente buscarClientePeloCpfOuCnpj(String cpfCnpj);
+
     Cliente buscarClientePeloId(String idCliente) throws Exception;
 }
