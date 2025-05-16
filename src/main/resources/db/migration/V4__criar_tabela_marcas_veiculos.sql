@@ -1,6 +1,5 @@
 CREATE TABLE IF NOT EXISTS marcas (
     id VARCHAR(150) NOT NULL PRIMARY KEY DEFAULT REPLACE(uuid_generate_v4()::text, '-',''),
     nome VARCHAR(150) UNIQUE NOT NULL,
-    tipo CHAR(1) NOT NULL,
     logo VARCHAR(150)
 );
