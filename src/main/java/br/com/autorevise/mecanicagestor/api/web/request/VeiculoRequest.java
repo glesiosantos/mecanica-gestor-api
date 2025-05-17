@@ -7,6 +7,6 @@ public record VeiculoRequest(
    String idVeiculo,
    @NotBlank(message = "Placa é obrigatório") String placa,
    @NotNull(message = "Ano do carro é obrigatório") int ano,
-   @NotNull(message = "Modelo é obrigatório")  String marca,
+   @NotNull(message = "Marca é obrigatório")  String marca,
    @NotNull(message = "Modelo é obrigatório")  String modelo
 ) {}
