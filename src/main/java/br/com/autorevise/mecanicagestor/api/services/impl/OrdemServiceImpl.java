@@ -55,13 +55,12 @@ public class OrdemServiceImpl implements OrdemService {
     @Override
     public Ordem registrarOrdemEstabelecimento(OrdemRequest request) throws Exception {
 
-
         Estabelecimento estabelecimento = estabelecimentoService.buscarEstabelecimentoPeloId(request.idEstabelecimento());
         Usuario usuario = usuarioService.buscarUsuarioPeloCpf(request.cpfResponsavel());
         Cliente cliente = clienteService.buscarClientePeloId(request.idCliente());
         Veiculo veiculo = null;
 
-        if (request.veiculo() != null) {
+        if (!request.veiculo().placa().isBlank()) {
             veiculo = getOrRegisterVeiculo(request, cliente);
         }
 
@@ -93,8 +92,10 @@ public class OrdemServiceImpl implements OrdemService {
                 .toList();
     }
 
+    @Transactional
     @Override
     public void atualizarStatusOrdemEstabelecimento(AtualizarOrdemStatusRequest request) throws Exception {
+
         Ordem ordem = ordemRepository.findById(request.idOrdem())
                 .orElseThrow(() -> new ObjetoNaoEncontradoException("Nenhum ordem encontrado com este ID "+request.idOrdem()));
 
@@ -102,27 +103,37 @@ public class OrdemServiceImpl implements OrdemService {
             ordem.setStatusOficina(StatusOficina.AG);
         }
 
+        if (OrdemStatus.valueOf(request.novoStatus()).equals(OrdemStatus.FI) && ordem.getStatusOficina() == StatusOficina.NA) {
+            baixaNoEstoqueDoEstabelecimento(ordem);
+        }
         ordem.setOrdemStatus(OrdemStatus.valueOf(request.novoStatus()));
         ordemRepository.save(ordem);
     }
 
+    @Transactional
     @Override
     public void atualizarStatusOficinaDoOrdemDoEstabelecimento(AtualizarStatusOficinaRequest request) throws Exception {
         Ordem ordem = ordemRepository.findById(request.idOrdem())
                 .orElseThrow(() -> new ObjetoNaoEncontradoException("Nenhum ordem encontrado com este ID "+request.idOrdem()));
 
-        if (StatusOficina.CO.equals(StatusOficina.valueOf(request.statusOficina()))) {
-            ordem.setStatusOficina(StatusOficina.CO);
-            ordem.setOrdemStatus(OrdemStatus.AP);
-        } else if (StatusOficina.PE.equals(StatusOficina.valueOf(request.statusOficina()))) {
-            ordem.setStatusOficina(StatusOficina.PE);
-            ordem.setOrdemStatus(OrdemStatus.PE);
-            ordem.getPendencias().add(request.descricaoPendencia());
-        } else {
-            ordem.setStatusOficina(StatusOficina.valueOf(request.statusOficina()));
+        System.out.println("*** **** "+ request.toString());
+
+        if (StatusOficina.valueOf(request.statusOficina()).equals(StatusOficina.EA)) {
+            baixaNoEstoqueDoEstabelecimento(ordem);
+            ordem.setStatusOficina(StatusOficina.EA);
         }
 
-        ordemRepository.save(ordem);
+        if (StatusOficina.valueOf(request.statusOficina()).equals(StatusOficina.CO)) {
+            ordem.setStatusOficina(StatusOficina.CO);
+            ordem.setOrdemStatus(OrdemStatus.AP);
+        }
+
+        if (StatusOficina.valueOf(request.statusOficina()).equals(StatusOficina.PE)) {
+            ordem.setStatusOficina(StatusOficina.PE);
+            ordem.setOrdemStatus(OrdemStatus.PE);
+        }
+
+         ordemRepository.save(ordem);
     }
 
     @Override
@@ -143,7 +154,6 @@ public class OrdemServiceImpl implements OrdemService {
     private Veiculo getOrRegisterVeiculo(OrdemRequest request, Cliente cliente) throws Exception {
         if (request.veiculo().idVeiculo() == null || request.veiculo().idVeiculo().isEmpty()) {
             Veiculo novoVeiculo = veiculoService.registrarVeiculo(request.veiculo());
-            System.out.println("*** veiculo novo "+ novoVeiculo.getId());
             veiculoService.vincularVeiculoComCliente(cliente, novoVeiculo);
             return novoVeiculo;
         } else {
@@ -177,5 +187,22 @@ public class OrdemServiceImpl implements OrdemService {
             servicos.add(servico);
         });
         return servicos;
+    }
+
+    private void baixaNoEstoqueDoEstabelecimento(Ordem ordem) {
+        ordem.getProdutos().forEach(item -> {
+            Optional<Produto> produtoOptional = produtoRepository.findById(item.getProduto().getId());
+
+            if(produtoOptional.isEmpty()) throw new RuntimeException("Produto com ID " + produtoOptional.get().getId() + " não encontrado.");
+
+            Produto produto = produtoOptional.get();
+
+            if(produto.getQuantidadeEstoque() < item.getQuantidade()) {
+                throw new RuntimeException("Estoque insuficiente para o produto: " + produto.getDescricaoProduto());
+            }
+            System.out.println("Produto: "+item.getProduto().getDescricaoProduto()+" quantidade: "+item.getQuantidade());
+            produto.setQuantidadeEstoque(produto.getQuantidadeEstoque() - item.getQuantidade());
+            produtoRepository.save(produto);
+        });
     }
 }

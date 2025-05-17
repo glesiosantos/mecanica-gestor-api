@@ -105,6 +105,14 @@ public class ClienteServiceImpl implements ClienteService {
                 .orElseThrow(() -> new ObjetoNaoEncontradoException(String.format("Nenhum cliente encontrado com este ID informado. ID '%s'", idCliente)));
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public Cliente buscarClientePeloCpfOuCnpj(String cpfCnpj) {
+        var cliente = clienteRepository.findByCpfCnpj(cpfCnpj).orElse(null);
+        System.out.println("**** "+ cliente.getNomeCompleto());
+        return cliente;
+    }
+
     @Override
     public Cliente buscarClientePeloId(String idCliente) throws Exception {
         return clienteRepository.findById(idCliente)

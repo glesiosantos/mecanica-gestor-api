@@ -3,7 +3,9 @@ package br.com.autorevise.mecanicagestor.api.web.controllers;
 import br.com.autorevise.mecanicagestor.api.enuns.CategoriaProduto;
 import br.com.autorevise.mecanicagestor.api.enuns.OrdemStatus;
 import br.com.autorevise.mecanicagestor.api.enuns.Perfil;
+import br.com.autorevise.mecanicagestor.api.enuns.StatusOficina;
 import br.com.autorevise.mecanicagestor.api.web.response.CategoriaProdutoResponse;
+import br.com.autorevise.mecanicagestor.api.web.response.OficinaStatusResponse;
 import br.com.autorevise.mecanicagestor.api.web.response.OrdemStatusResponse;
 import br.com.autorevise.mecanicagestor.api.web.response.PerfilResponse;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +41,13 @@ public class UtilController {
         List<OrdemStatusResponse> statusResponses = Arrays.stream(OrdemStatus.values()).map(ordemStatus ->
                 new OrdemStatusResponse(ordemStatus.name(), ordemStatus.getDescricao(), ordemStatus.getContexto(), ordemStatus.getProposta().name()))
                 .collect(Collectors.toList());
+        return ResponseEntity.ok(statusResponses);
+    }
+
+    @GetMapping("/status/oficina")
+    public ResponseEntity<?> carregarStatusOficina() {
+        List<OficinaStatusResponse> statusResponses = Arrays.stream(StatusOficina.values()).map(status ->
+                        new OficinaStatusResponse(status.name(), status.getDescricao())).toList();
         return ResponseEntity.ok(statusResponses);
     }
 }
