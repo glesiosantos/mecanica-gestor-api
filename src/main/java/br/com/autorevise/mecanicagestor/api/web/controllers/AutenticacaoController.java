@@ -9,12 +9,10 @@ import br.com.autorevise.mecanicagestor.api.web.response.EstabelecimentoResponse
 import br.com.autorevise.mecanicagestor.api.web.response.PlanoResponse;
 import br.com.autorevise.mecanicagestor.api.web.response.UsuarioComUmEstabelecimentoResponse;
 import br.com.autorevise.mecanicagestor.api.web.response.UsuarioComVariosEstabelecimentos;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Set;
@@ -48,10 +46,10 @@ public class AutenticacaoController {
         }
     }
 
-    @PostMapping("/refresh")
-    public ResponseEntity<?> refreshToken(@RequestBody RefreshRequest request) {
-        var token = autenticacaoService.validarToken(request.token());
-        System.out.println("**** **** **** "+token);
-        return ResponseEntity.ok(token);
+    @GetMapping("/validar-token")
+    public ResponseEntity<?> validarToken(HttpServletRequest request) {
+        String token = request.getHeader("Authorization");
+        var isValid = autenticacaoService.validarToken(token.replace("Bearer ", ""));
+        return ResponseEntity.ok(isValid);
     }
 }
