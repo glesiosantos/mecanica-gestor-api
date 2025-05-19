@@ -116,8 +116,6 @@ public class OrdemServiceImpl implements OrdemService {
         Ordem ordem = ordemRepository.findById(request.idOrdem())
                 .orElseThrow(() -> new ObjetoNaoEncontradoException("Nenhum ordem encontrado com este ID "+request.idOrdem()));
 
-        System.out.println("*** **** "+ request.toString());
-
         if (StatusOficina.valueOf(request.statusOficina()).equals(StatusOficina.EA)) {
             baixaNoEstoqueDoEstabelecimento(ordem);
             ordem.setStatusOficina(StatusOficina.EA);

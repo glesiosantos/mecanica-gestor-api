@@ -16,7 +16,7 @@ public record OrdemRequest (
         String tipoProposta,
         int diasValidade,
         Double valorEntrada,
-        int totalParcelas,
+        int parcelas,
         List<ProdutoOrdemRequest> produtos,
         List<ServicoResponse> servicos,
         String cpfResponsavel

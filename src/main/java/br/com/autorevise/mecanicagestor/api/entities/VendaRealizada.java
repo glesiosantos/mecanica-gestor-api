@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDate;
 
@@ -35,7 +34,6 @@ public class VendaRealizada extends EntidadeAbstrata {
     @JoinColumn(name = "ordem_id")
     private Ordem ordem;
 
-    @CreatedDate
     @Column(name = "dt_realizacao")
     private LocalDate dataRealizacao;
 
@@ -54,8 +52,8 @@ public class VendaRealizada extends EntidadeAbstrata {
     @Column(name = "vl_entrada")
     private Double valorEntrada;
 
-    @Column(name = "desconto")
-    private int percentualDesconto;
+    @Column(name = "vl_desconto")
+    private Double valorDesconto;
 
     @Column(name = "forma_pagamento")
     private String formaPagamento;
@@ -65,6 +63,9 @@ public class VendaRealizada extends EntidadeAbstrata {
 
     @Column(name = "atendido_na_oficina")
     private boolean foiParaOficina;
+
+    @Column(name = "status")
+    private String statusPedido;
 
     @Column(name = "responsavel")
     private String responsavelVenda;
