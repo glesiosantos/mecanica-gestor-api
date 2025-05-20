@@ -75,7 +75,7 @@ public class VendaRealizadaServiceImpl implements VendaRealizadaService {
         }
 
         vendaRealizada.setValorFinalBruto(valorTotalProdutos + valorTotalServicos);
-        vendaRealizada.setValorDesconto(Optional.ofNullable(vendaRealizada.getValorFinalBruto() * (ordem.getDesconto()/100)).orElse(0.0));
+        vendaRealizada.setValorDesconto(ordem.getDesconto() != null ? vendaRealizada.getValorFinalBruto() * (ordem.getDesconto() / 100) : 0.0);
         vendaRealizada.setValorFinalComDesconto(vendaRealizada.getValorFinalBruto() - vendaRealizada.getValorDesconto());
         vendaRealizadaRepository.save(vendaRealizada);
     }

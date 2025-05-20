@@ -20,13 +20,8 @@ public class DashboardServiceImpl implements DashboardService {
     @Autowired
     private VendaRealizadaService vendaRealizadaService;
 
-    @Autowired
-    private OrdemRepository ordemRepository;
-
     @Override
     public DashboardResponse obterDadosEstatitiscoDoEstabelecimento(String idEstabelecimento) {
-
-        ordemRepository.findAll().stream().forEach(o -> vendaRealizadaService.registrarVendaConcluida(o));
 
         List<CardDashboardResponse> cards = new ArrayList<>();
         cards.add(new CardDashboardResponse("Vendas do Mês","0","monetization_on"));

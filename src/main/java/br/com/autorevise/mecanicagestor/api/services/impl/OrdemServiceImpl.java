@@ -52,6 +52,9 @@ public class OrdemServiceImpl implements OrdemService {
     @Autowired
     private OrdemMapper ordemMapper;
 
+    @Autowired
+    private VendaRealizadaService vendaRealizadaService;
+
     @Override
     public Ordem registrarOrdemEstabelecimento(OrdemRequest request) throws Exception {
 
@@ -72,7 +75,9 @@ public class OrdemServiceImpl implements OrdemService {
             .valorEntrada(Optional.ofNullable(request.valorEntrada()).orElse(0.0))
             .formaDePagamento(FormaDePagamento.valueOf(request.formaPagamento()))
             .observacoes(request.observacoes())
+            .totalParcelas(request.parcelas())
             .tipoProposta(TipoDeProposta.valueOf(request.tipoProposta()))
+            .statusOficina(StatusOficina.NA)
             .totalDiasProposta(request.diasValidade())
             .ordemStatus(OrdemStatus.valueOf(request.statusPedido()))
             .responsavel(usuario)
@@ -99,14 +104,26 @@ public class OrdemServiceImpl implements OrdemService {
         Ordem ordem = ordemRepository.findById(request.idOrdem())
                 .orElseThrow(() -> new ObjetoNaoEncontradoException("Nenhum ordem encontrado com este ID "+request.idOrdem()));
 
+        System.out.println("**** Status Ordem: "+ordem.getOrdemStatus());
+        System.out.println("**** Status Oficinas: "+ordem.getStatusOficina());
+
         if (OrdemStatus.valueOf(request.novoStatus()).equals(OrdemStatus.EE)) {
             ordem.setStatusOficina(StatusOficina.AG);
         }
 
-        if (OrdemStatus.valueOf(request.novoStatus()).equals(OrdemStatus.FI) && ordem.getStatusOficina() == StatusOficina.NA) {
+        if (OrdemStatus.valueOf(request.novoStatus()).equals(OrdemStatus.FI) && ordem.getStatusOficina().equals(StatusOficina.NA)) {
+            System.out.println("**** Vendas rápida");
             baixaNoEstoqueDoEstabelecimento(ordem);
+            ordem.setOrdemStatus(OrdemStatus.valueOf(request.novoStatus()));
+            vendaRealizadaService.registrarVendaConcluida(ordem);
         }
-        ordem.setOrdemStatus(OrdemStatus.valueOf(request.novoStatus()));
+
+        if(OrdemStatus.valueOf(request.novoStatus()).equals(OrdemStatus.FI) && ordem.getStatusOficina().equals(StatusOficina.CO)) {
+            System.out.println("**** Finalizado e concluído pela oficina");
+            ordem.setOrdemStatus(OrdemStatus.valueOf(request.novoStatus()));
+            vendaRealizadaService.registrarVendaConcluida(ordem);
+        }
+
         ordemRepository.save(ordem);
     }
 
@@ -198,7 +215,6 @@ public class OrdemServiceImpl implements OrdemService {
             if(produto.getQuantidadeEstoque() < item.getQuantidade()) {
                 throw new RuntimeException("Estoque insuficiente para o produto: " + produto.getDescricaoProduto());
             }
-            System.out.println("Produto: "+item.getProduto().getDescricaoProduto()+" quantidade: "+item.getQuantidade());
             produto.setQuantidadeEstoque(produto.getQuantidadeEstoque() - item.getQuantidade());
             produtoRepository.save(produto);
         });
