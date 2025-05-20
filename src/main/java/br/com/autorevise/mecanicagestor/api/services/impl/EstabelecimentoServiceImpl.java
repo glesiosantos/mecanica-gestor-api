@@ -1,10 +1,13 @@
 package br.com.autorevise.mecanicagestor.api.services.impl;
 
+import br.com.autorevise.mecanicagestor.api.entities.Cliente;
 import br.com.autorevise.mecanicagestor.api.entities.Estabelecimento;
 import br.com.autorevise.mecanicagestor.api.entities.Usuario;
 import br.com.autorevise.mecanicagestor.api.enuns.Perfil;
 import br.com.autorevise.mecanicagestor.api.enuns.Plano;
+import br.com.autorevise.mecanicagestor.api.repositories.ClienteRepository;
 import br.com.autorevise.mecanicagestor.api.repositories.EstabelecimentoRepository;
+import br.com.autorevise.mecanicagestor.api.services.ClienteService;
 import br.com.autorevise.mecanicagestor.api.services.EstabelecimentoService;
 import br.com.autorevise.mecanicagestor.api.services.exceptions.ObjetoNaoEncontradoException;
 import br.com.autorevise.mecanicagestor.api.web.mappers.ClienteMapper;
@@ -18,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -32,19 +36,23 @@ public class EstabelecimentoServiceImpl implements EstabelecimentoService {
     private EstabelecimentoMapper estabelecimentoMapper;
 
     @Autowired
+    private ClienteRepository clienteRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
     private ClienteMapper clienteMapper;
 
+    @Transactional
     @Override
     public Estabelecimento cadastrarEstabelecimento(EstabelecimentoRequest request) {
 
         Optional<Estabelecimento> optional = estabelecimentoRepository.findByCpfOuCnpj(request.documento());
+        Cliente cliente = clienteRepository.findByCpfCnpj("00000000000").get();
 
         if(!optional.isPresent()) {
             var estabelecimento = estabelecimentoMapper.converterRequestParaModel(request);
-            estabelecimento.setLogo("default.png");
             var usuario = Usuario.builder()
                     .nomeCompleto(request.proprietario())
                     .cpf(request.cpfProprietario())
@@ -55,7 +63,16 @@ public class EstabelecimentoServiceImpl implements EstabelecimentoService {
                     .estabelecimentos(Set.of(estabelecimento))
                     .build();
             estabelecimento.setUsuarios(Set.of(usuario));
-            return estabelecimentoRepository.saveAndFlush(estabelecimento);
+
+            estabelecimento.setClientes(Set.of(cliente));
+
+            // Se necessário, inicializa a coleção do cliente (garantia extra)
+            if (cliente.getEstabelecimentos() == null) {
+                cliente.setEstabelecimentos(new HashSet<>());
+            }
+
+            cliente.getEstabelecimentos().add(estabelecimento);
+            return estabelecimentoRepository.save(estabelecimento);
         } else {
             throw new IllegalStateException("Estabelecimento com documento " + request.documento() + " já existe.");
         }

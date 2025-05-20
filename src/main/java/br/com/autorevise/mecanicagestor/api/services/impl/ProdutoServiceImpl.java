@@ -51,8 +51,10 @@ public class ProdutoServiceImpl implements ProdutoService {
 
         produtoExistente.setCodigoProduto(request.codigo());
         produtoExistente.setCategoriaProduto(CategoriaProduto.valueOf(request.categoria().trim()));
-        produtoExistente.setDescricaoProduto(request.descricao());;
+        produtoExistente.setDescricaoProduto(request.descricao());
         produtoExistente.setReferenciaProduto(request.referencia());
+        produtoExistente.setPrecoCusto(request.precoCusto());
+        produtoExistente.setQuantidadeEstoque(request.quantidadeEstoque());
         produtoExistente.setPercentualLucro(request.percentualLucro());
         produtoRepository.saveAndFlush(produtoExistente);
     }

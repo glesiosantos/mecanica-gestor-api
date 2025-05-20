@@ -1,6 +1,7 @@
 package br.com.autorevise.mecanicagestor.api.entities;
 
 import br.com.autorevise.mecanicagestor.api.enuns.TipoPessoa;
+import br.com.autorevise.mecanicagestor.api.utils.conversor.CPFConversor;
 import br.com.autorevise.mecanicagestor.api.utils.conversor.UpperCaseConverter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -23,6 +24,7 @@ import java.util.Set;
 @Table(name = "clientes")
 public class Cliente extends EntidadeAbstrata {
 
+    @Convert(converter = CPFConversor.class)
     @Column(name = "cpf_cnpj")
     private String cpfCnpj;
 
@@ -50,7 +52,7 @@ public class Cliente extends EntidadeAbstrata {
     private TipoPessoa tipoPessoa;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(name = "cliente_estabelecimento",
             joinColumns = @JoinColumn(name = "cliente_id"),
             inverseJoinColumns = @JoinColumn(name = "estabelecimento_id"))

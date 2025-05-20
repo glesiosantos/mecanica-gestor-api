@@ -10,7 +10,8 @@ public enum StatusOficina {
     AG("Aguardando"),
     EA("Em Andamento"),
     PE("Pendente"),
-    CO("Concluído");
+    CO("Concluído"),
+    NA("Não atribuído");
 
     private final String descricao;
 }

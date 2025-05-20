@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS venda_realizadas (
+    id VARCHAR(150) NOT NULL PRIMARY KEY DEFAULT REPLACE(uuid_generate_v4()::text, '-',''),
+    cliente_id VARCHAR(150) NOT NULL,
+    veiculo_id VARCHAR(150),
+    estabelecimento_id VARCHAR(150) NOT NULL,
+    ordem_id VARCHAR(150) NOT NULL,
+    vl_desconto DECIMAL(10,2) NOT NULL DEFAULT '0.0',
+    nr_parcelas INTEGER NOT NULL DEFAULT '0',
+    forma_pagamento VARCHAR(60) NOT NULL,
+    vl_entrada DECIMAL(10,2) NOT NULL DEFAULT '0.00',
+    vl_tt_vend_produtos DECIMAL(10,2) NOT NULL DEFAULT '0.00',
+    vl_tt_vend_servicos DECIMAL(10,2) NOT NULL DEFAULT '0.00',
+    vl_ordem_bruto DECIMAL(10,2) NOT NULL,
+    vl_ordem_desconto DECIMAL(10,2) NOT NULL,
+    status VARCHAR(60) NOT NULL,
+    responsavel VARCHAR(150) NOT NULL,
+    atendido_na_oficina BOOLEAN DEFAULT 'false',
+    dt_realizacao DATE NOT NULL DEFAULT 'now()',
+    CONSTRAINT fk_venda_realizada_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT fk_venda_realizada_veiculo FOREIGN KEY (veiculo_id) REFERENCES veiculos(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT fk_venda_realizada_estabelecimento FOREIGN KEY (estabelecimento_id) REFERENCES estabelecimentos(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT fk_venda_realizada_ordem FOREIGN KEY (ordem_id) REFERENCES ordens(id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
