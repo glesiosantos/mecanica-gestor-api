@@ -56,9 +56,7 @@ public class VendaRealizadaServiceImpl implements VendaRealizadaService {
             ));
             valorTotalProdutos =  produtos.stream().mapToDouble(VendaRealizadaProduto::getSubtotal).sum();
             vendaRealizada.setValorTotalProdutos(valorTotalProdutos);
-            System.out.println("Valor total produtos "+valorTotalProdutos);
         } else {
-            System.out.println("Não tem produtos");
             vendaRealizada.setValorTotalProdutos(0.0);
         }
 
@@ -72,9 +70,7 @@ public class VendaRealizadaServiceImpl implements VendaRealizadaService {
 
             valorTotalServicos = servicos.stream().mapToDouble(VendaRealizadaServicos::getValorVenda).sum();
             vendaRealizada.setValorTotalServicos(valorTotalServicos);
-            System.out.println("Valor total produtos "+valorTotalServicos);
         } else {
-            System.out.println("Não tem serviços");
             vendaRealizada.setValorTotalServicos(0.0);
         }
 
